@@ -1,5 +1,7 @@
 # Javascript - 1
+
 https://www.w3schools.com/js/default.asp
+
 
 Você deve ler tudo do menu JS Tutorials, de **JS HOME** até **JS Loop While**
 
@@ -18,7 +20,7 @@ Você realizará as segunites tarefas num HTML + JS. O código base já está di
 
 Sendo que, {Fulano} deve ser o conteúdo da caixa de texto "Nome". O nome do usuário deve aparecer em caixa alta (CAPSLOCK)
 
-2. Ao clicar no botão **GERAR CUPOM**, também deve gerar um número da sorte para o usúario que deve variar de **5625 até 5731**. Esse número da sorte deve ser armazenado num ARRAY. Para outras execuções, o número da sorte **NÃO** pode ser igual a um já gerado. Caso não existam mais cupons para serem gerados, deve ser mostrado um alert para avisar o usuário de que os cupons acabaram.
+2. Ao clicar no botão **GERAR CUPOM**, também deve gerar um número da sorte para o usúario que deve variar de **5725 até 5731**. Esse número da sorte deve ser armazenado num ARRAY. Para outras execuções, o número da sorte **NÃO** pode ser igual a um já gerado. Caso não existam mais cupons para serem gerados, deve ser mostrado um alert para avisar o usuário de que os cupons acabaram.
 A mensagem deve ser mostrada abaixo a mensagem da atividade (1), e deve estar no seguinte padrão:
 
 > O seu número da sorte é: {Numero}!!
