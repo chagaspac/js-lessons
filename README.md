@@ -1,5 +1,6 @@
 # Javascript - 1
 https://www.w3schools.com/js/default.asp
+
 Você deve ler tudo do menu JS Tutorials, de **JS HOME** até **JS Loop While**
 
 ## Atividade
@@ -10,7 +11,9 @@ Você realizará as segunites tarefas num HTML + JS. O código base já está di
 1. Ao clicar no botão GERAR CUPOM, você deve verificar o horário atual. Dependendo do horário, você deve mostrar as segunites mensagens para o usuário:
 
 > *Bom dia* {Fulano} (4am até 12am)
+
 > *Boa tarde* {Fulano} (12pm até 19pm)
+
 > *Boa noite* {Fulano} (19pm até 4am)
 
 Sendo que, {Fulano} deve ser o conteúdo da caixa de texto "Nome". O nome do usuário deve aparecer em caixa alta (CAPSLOCK)
