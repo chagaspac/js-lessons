@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SORTEIO DA BELONAVE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    
+    <h1>Sorteio da belonave</h1>
+    <h3>Digite seu nome para gerar seu cupom:</h3>
+    <script>
+      function aFuncao(){
+        var nome = document.getElementById("nome").value;
+        var date = new Date();
+        var hours = date.getHours();
+        var cupom = new Array;
+        cupom.push(Math.floor(Math.random()*6)+5725);
+        var i;
+        for (i = 0; i < cupom.length; i++){            
+        document.getElementById('test').innerHTML = (cupom[i]);
+        }
+        if(hours>4 && hours<12){
+            document.getElementById('p').innerHTML = ("Bom dia "+nome);
+        } else {
+            if (hours>12 && hours<19){
+                document.getElementById('p').innerHTML = ("Boa tarde "+nome);
+            } else {
+                document.getElementById('p').innerHTML = ("Boa noite "+nome);
+            }
+        }
+      }
+    </script>
+        <input type="text" id="nome" placeholder="Seu nome aqui" />
+        <button type="button" id="gerarCupom" onclick="aFuncao()">GERAR CUPOM</button>
+        <p id="p" ></p>
+        <p id="test"></p>
+    <button type="button" id="sortearCupom">SORTEAR!!!</button>
+    <button type="button" id="reset">RESETAR</button>
+
+    
+</body>
+</html>
