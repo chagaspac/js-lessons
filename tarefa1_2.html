@@ -11,35 +11,59 @@
     
     <h1>Sorteio da belonave</h1>
     <h3>Digite seu nome para gerar seu cupom:</h3>
-    <script>
-      function aFuncao(){
-        var nome = document.getElementById("nome").value;
-        var date = new Date();
-        var hours = date.getHours();
-        var cupom = new Array;
-        cupom.push(Math.floor(Math.random()*6)+5725);
-        var i;
-        for (i = 0; i < cupom.length; i++){            
-        document.getElementById('test').innerHTML = (cupom[i]);
-        }
-        if(hours>4 && hours<12){
-            document.getElementById('p').innerHTML = ("Bom dia "+nome);
-        } else {
-            if (hours>12 && hours<19){
-                document.getElementById('p').innerHTML = ("Boa tarde "+nome);
-            } else {
-                document.getElementById('p').innerHTML = ("Boa noite "+nome);
-            }
-        }
-      }
-    </script>
-        <input type="text" id="nome" placeholder="Seu nome aqui" />
-        <button type="button" id="gerarCupom" onclick="aFuncao()">GERAR CUPOM</button>
-        <p id="p" ></p>
-        <p id="test"></p>
+    <input type="text" id="nome" placeholder="Seu nome aqui" />
+    <button type="button" id="gerarCupom" onclick="generateCupom()">GERAR CUPOM</button>
+    <p id="saudacao" ></p>
+    <p id="cupons"></p>
+    <p id="error"></p>
     <button type="button" id="sortearCupom">SORTEAR!!!</button>
     <button type="button" id="reset">RESETAR</button>
+    <p id="error"></p>
 
-    
+    <script>
+        let $ = document.querySelector.bind(document);
+        
+        let _cupom = new Array;
+        let _saudacao = $('#saudacao');
+        let _nome = $('#nome');
+        let _cupons = $('#cupons');
+        let _error = $('#error');
+        let _maxCupons = 6;
+        let _initRandomValue = 5725;
+        
+        function generateCupom() {
+            let hours = new Date().getHours();
+            let uniqueRandomNumber = generateUniqueCupom(_cupom);
+            if(uniqueRandomNumber != null){
+                _cupom.push(uniqueRandomNumber);
+            }else{
+                _error.innerText = "Número de cupons máximo atingido. Aguarde o próximo sorteio.";
+            }
+            _saudacao.innerHTML = _cupom.join(', ');
+            if (hours > 4 && hours < 12) {
+                _cupons.innerHTML = ("Bom dia " + _nome.value);
+            } else {
+                if (hours > 12 && hours < 19) {
+                    _cupons.innerHTML = ("Boa tarde " + _nome.value);
+                } else {
+                    _cupons.innerHTML = ("Boa noite " + _nome.value);
+                }
+            }
+        }
+        
+        function generateUniqueCupom(arr) {
+            if(arr != null && arr.length < _maxCupons){
+                let randomNumber = Math.floor(Math.random() * _maxCupons) + _initRandomValue;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] == randomNumber) {
+                        return generateUniqueCupom(arr);
+                    }
+                }
+                return randomNumber;
+            }else{
+                return null;
+            }
+        }
+    </script>
 </body>
 </html>
