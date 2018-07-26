@@ -16,8 +16,8 @@
     <p id="saudacao" ></p>
     <p id="cupons"></p>
     <p id="error"></p>
-    <button type="button" id="sortearCupom">SORTEAR!!!</button>
-    <button type="button" id="reset">RESETAR</button>
+    <button type="button" id="sortearCupom" onclick="sorteio()">SORTEAR!!!</button>
+    <button type="button" id="reset" onclick="reset()">RESETAR</button>
     <p id="error"></p>
 
     <script>
@@ -63,6 +63,19 @@
             }else{
                 return null;
             }
+        }
+
+        function sorteio() {
+            if(_cupom.length != 0){
+                let sorteado = Math.floor(Math.random() * _cupom.length);
+                window.alert("PARABÉNS NÚMERO "+_cupom[sorteado]+", VOCÊ ACABA DE GANHAR UMA BELONAVE DA ALIANÇA!");
+            } else {
+                window.alert("Não tem nenhum cupom cadastrado. :(");
+            }                                  
+        }
+
+        function reset(){
+            location.reload()
         }
     </script>
 </body>
